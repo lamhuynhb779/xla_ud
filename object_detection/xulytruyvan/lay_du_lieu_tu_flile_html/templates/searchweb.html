@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Search Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<script language="javascript">
+  		function kiemtra(){
+  			var txt = document.getElementById("text1").value;
+  			//alert(txt);
+  			if(txt=="") 
+  				return false;
+  			else 
+  				return true;
+  		}
+  	</script>
+</head>
+<body>
+<center>
+	<h1 style="font-size: 62px; margin-top: 200px; color:#B31BD3;">Guguru</h1>
+	<form  action="http://localhost:5000/result" method="POST">
+		<div class="container" style="padding: 3px;">
+			<div class="row">
+				<div class="form-group">
+					<div class="col-lg-6 col-lg-offset-3">
+						<input id="text1" class="form-control" type="search" name="text"  />
+					</div>
+				</div>
+			</div>
+		
+		
+		
+			<div class="row">
+				<div class="col-lg-4 col-lg-offset-4" style="padding: 5px;">
+					<div class="input-group">
+						<input onclick="return kiemtra();" class="form-control" type="submit" value="Tìm kiếm" id="myInput" style="background-color: #ACA6A6bb ; color: #000000">
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</center>
+</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Trang Kết Quả</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../static/styletrangketqua.css">
+</head>
+<body>
+
+        <div class="container">
+        <div class="row">
+      <div class="container">
+        <form action="http://localhost:5000/result" method="POST">
+            <div class="row">
+        <div class="col-md-6">
+            <h2 class="Title">Guguru</h2>
+            <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    <input type="text" class="form-control input-lg" name="text" />
+                    <span class="input-group-btn">
+                        <input class="form-control" type="submit" value="Tìm kiếm" id="myInput" style="background-color: #ACA6A6bb ; color: #000000;height:46px" >
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+        </form>
+        <br/>
+
+
+
+            <div class="container">
+        <div class="row">
+        <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h1 class="gallery-title">Hình ảnh cho "{{content}}"</h1>
+        </div>
+
+        <!--<div align="center">
+            <button class="btn btn-default filter-button" data-filter="all">All</button>
+            <button class="btn btn-default filter-button" data-filter="hdpe">HDPE Pipes</button>
+            <button class="btn btn-default filter-button" data-filter="sprinkle">Sprinkle Pipes</button>
+            <button class="btn btn-default filter-button" data-filter="spray">Spray Nozzle</button>
+            <button class="btn btn-default filter-button" data-filter="irrigation">Irrigation Pipes</button>
+        </div>
+        <br/>-->
+
+
+        <section>
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe" style="width: 1200px;">
+                {% for value in result %}
+            <img src="{{url_for('static', filename=value)}}" class="img-responsive"  style="float: left;margin-right: 12px;margin-top: 12px;width: 365px;height: 362px">
+            {% endfor %}
+            </div>
+        </section>
+        
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
